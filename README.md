@@ -29,7 +29,7 @@ Kiến trúc phần mềm được thiết kế theo mô hình Hướng đối t
 
 ---
 
-## 🛠 Giai Đoạn 3: Triển Khai Module
+##  Giai Đoạn 3: Triển Khai Module
 Hệ thống được module hóa thành các luồng xử lý độc lập:
 
 1. **Module Data (`utils/DataIO.py`, `convert_data.py`)**: Đảm nhiệm luồng ETL (Extract, Transform, Load). Thực hiện Data Cleaning để loại bỏ nhiễu (phụ kiện rác, dữ liệu khuyết thiếu) và xây dựng Index Map.
@@ -69,14 +69,20 @@ Pipeline `clean_and_convert` đã xử lý triệt để hiện tượng Data Le
 
 ##  Ảnh Demo Hệ Thống (Screenshots)
 
+**1. Tải và Xây dựng Hệ thống lần đầu:**
 
-**Tải và Xây dựng Hệ thống cực nhanh từ Cache:**
 ![Load Data](images/load_data.png)
 
-**Tốc độ Gợi ý Tức thời:**
+**2. Tải và Xây dựng Hệ thống lần 2 (từ cache):**
+
+![Load Data](images/load_data_cache.png)
+
+**3. Tốc độ Gợi ý Tức thời:**
+
 ![Recommendation](images/recommendation.png)
 
-**Thống kê Hệ thống không còn Data Leakage:**
+**4. Thống kê Hệ thống không còn Data Leakage:**
+
 ![Statistics](images/statistics.png)
 
 ---
