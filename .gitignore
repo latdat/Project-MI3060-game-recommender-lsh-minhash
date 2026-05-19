@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Data Files (CỰC KỲ QUAN TRỌNG)
+data/*.csv
+data/*.jsonl
+data/*.pkl
+data/*.db
+data/*.sqlite
+data/*.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
