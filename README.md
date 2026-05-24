@@ -1,4 +1,4 @@
-# Báo cáo Đồ án MI3060: Hệ Thống Gợi Ý Game (Game Recommender System)
+# Báo cáo MI3060: Hệ Thống Gợi Ý Game (Game Recommender System)
 
 ##  Giới Thiệu
 Dự án triển khai một hệ thống gợi ý tựa game quy mô lớn dựa trên phương pháp **Collaborative Filtering**. Để giải quyết bài toán hiệu năng khi mở rộng quy mô (Scale), hệ thống áp dụng thuật toán **MinHash** kết hợp **Locality-Sensitive Hashing (LSH)**, cho phép xử lý hàng triệu lượt tương tác với độ trễ truy vấn chỉ tính bằng mili-giây, khắc phục hoàn toàn nút thắt cổ chai của phương pháp vét cạn (Brute-force) truyền thống.

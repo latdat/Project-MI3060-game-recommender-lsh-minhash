@@ -7,6 +7,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from utils.DataIO import DataIO
 from utils.Timer import Timer
 from core.Recommender import Recommender
+from evaluation.metrics import evaluate_system
 
 class Main:
     def __init__(self):
@@ -23,14 +24,15 @@ class Main:
         print("1. Tải Dữ Liệu (Load Data)")
         print("2. Lấy Gợi Ý Cho User (Get Recommendations)")
         print("3. Hiển Thị Thống Kê (Show Statistics)")
-        print("4. Thoát (Exit)")
+        print("4. Đánh Giá Hệ Thống (Evaluate System)")
+        print("5. Thoát (Exit)")
         print("="*50)
     
     def run(self):
         """Chạy chương trình chính"""
         while True:
             self.show_menu()
-            choice = input("Chọn tùy chọn (1-4): ").strip()
+            choice = input("Chọn tùy chọn (1-5): ").strip()
             
             if choice == '1':
                 self._load_data()
@@ -39,6 +41,8 @@ class Main:
             elif choice == '3':
                 self._show_statistics()
             elif choice == '4':
+                self._evaluate_system()
+            elif choice == '5':
                 print("Đang thoát... Tạm biệt!")
                 break
             else:
@@ -183,6 +187,14 @@ class Main:
         for i, (asin, item) in enumerate(popular_items, 1):
             title = item.title if item.title else "Không rõ"
             print(f"  {i}. {title[:50]} ({item.get_interaction_count()} lượt tương tác)")
+
+    def _evaluate_system(self):
+        """Đánh giá hệ thống"""
+        if self.recommender is None:
+            print("Lỗi: Vui lòng tải dữ liệu trước (Tùy chọn 1)")
+            return
+        
+        evaluate_system(self.recommender, self.user_index, self.item_index, num_samples=100)
 
 def main():
     """Entry point"""
