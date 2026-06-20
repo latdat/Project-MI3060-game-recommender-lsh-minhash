@@ -45,9 +45,9 @@ def run_performance_test():
     csv_file = os.path.join(results_dir, 'performance_results.csv')
     with open(csv_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['Metric', 'Value (Seconds)'])
+        writer.writerow(['Metric', 'Value'])
         writer.writerow(['Index Build Time', f"{build_time:.4f}"])
-        writer.writerow(['Total Query Time (100 users)', f"{query_time_100:.4f}"])
+        writer.writerow(['Total Query Time', f"{query_time_100:.4f}"])
         writer.writerow(['Average Query Time', f"{avg_query_time:.4f}"])
         
     print(f"Results saved to {csv_file}")
@@ -55,7 +55,7 @@ def run_performance_test():
     # Generate simple chart
     try:
         import matplotlib.pyplot as plt
-        metrics = ['Build Time (s)', 'Avg Query (ms)']
+        metrics = ['Build Time', 'Avg Query']
         values = [build_time, avg_query_time * 1000]
         
         plt.figure(figsize=(8, 5))

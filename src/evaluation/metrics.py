@@ -2,7 +2,7 @@ import random
 from utils.Timer import Timer
 
 def evaluate_system(recommender, user_index, item_index, num_samples=100):
-    print(f"\n=== ĐANG ĐÁNH GIÁ HỆ THỐNG ({num_samples} USERS) ===")
+    print(f"\n=== ĐANG ĐÁNH GIÁ HỆ THỐNG ===")
     
     timer = Timer("Evaluation")
     timer.start()
@@ -58,10 +58,10 @@ def evaluate_system(recommender, user_index, item_index, num_samples=100):
     avg_candidates = total_candidates / total_users_evaluated if total_users_evaluated > 0 else 0
     
     print(f"\n{'='*50}")
-    print(f"KẾT QUẢ ĐÁNH GIÁ (EVALUATION RESULTS)")
+    print(f"KẾT QUẢ ĐÁNH GIÁ")
     print(f"{'='*50}")
     print(f"Số lượng Users test: {total_users_evaluated}")
-    print(f"Hit Rate (Precision@10): {avg_precision:.2f}%")
-    print(f"Coverage (Độ phủ items): {coverage:.2f}% ({len(unique_recommended_items)}/{len(item_index)} items)")
+    print(f"Hit Rate: {avg_precision:.2f}%")
+    print(f"Coverage: {coverage:.2f}% ({len(unique_recommended_items)}/{len(item_index)} items)")
     print(f"Avg Candidates: {avg_candidates:.2f} users/truy vấn")
     print(f"{'='*50}\n")

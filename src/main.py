@@ -21,11 +21,11 @@ class Main:
         print("\n" + "="*50)
         print("HỆ THỐNG GỢI Ý GAME - LSH + MinHash")
         print("="*50)
-        print("1. Tải Dữ Liệu (Load Data)")
-        print("2. Lấy Gợi Ý Cho User (Get Recommendations)")
-        print("3. Hiển Thị Thống Kê (Show Statistics)")
-        print("4. Đánh Giá Hệ Thống (Evaluate System)")
-        print("5. Thoát (Exit)")
+        print("1. Tải Dữ Liệu")
+        print("2. Lấy Gợi Ý Cho User")
+        print("3. Hiển Thị Thống Kê")
+        print("4. Đánh Giá Hệ Thống")
+        print("5. Thoát")
         print("="*50)
     
     def run(self):
@@ -50,7 +50,7 @@ class Main:
     
     def _load_data(self):
         """Load data và build recommendation system"""
-        print("\n=== ĐANG TẢI DỮ LIỆU (LOADING DATA) ===")
+        print("\n=== ĐANG TẢI DỮ LIỆU ===")
         
         # Paths
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,7 +62,7 @@ class Main:
         
         # Thử load từ cache trước
         if os.path.exists(cache_file):
-            print(f"Đã tìm thấy file cache. Đang nạp hệ thống (Load Data) từ cache...")
+            print(f"Đã tìm thấy file cache. Đang nạp hệ thống từ cache...")
             timer = Timer("Cache Loading")
             timer.start()
             try:
@@ -111,7 +111,7 @@ class Main:
         print("\n[THÀNH CÔNG] Đã tải dữ liệu và xây dựng hệ thống gợi ý thành công!")
         
         # Lưu vào cache để nạp nhanh cho các lần chạy sau
-        print("Đang lưu hệ thống vào file cache để nạp cực nhanh (Load Data) cho lần chạy sau...")
+        print("Đang lưu hệ thống vào file cache để nạp cực nhanh cho lần chạy sau...")
         try:
             with open(cache_file, 'wb') as f:
                 pickle.dump({
@@ -129,7 +129,7 @@ class Main:
             print("Lỗi: Vui lòng tải dữ liệu trước (Tùy chọn 1)")
             return
         
-        print("\n=== LẤY GỢI Ý (GET RECOMMENDATIONS) ===")
+        print("\n=== LẤY GỢI Ý ===")
         user_id = input("Nhập User ID: ").strip()
         
         if user_id not in self.user_index:
@@ -170,7 +170,7 @@ class Main:
             print("Lỗi: Vui lòng tải dữ liệu trước (Tùy chọn 1)")
             return
         
-        print("\n=== THỐNG KÊ HỆ THỐNG (SYSTEM STATISTICS) ===")
+        print("\n=== THỐNG KÊ HỆ THỐNG ===")
         print(f"Tổng số Users: {len(self.user_index)}")
         print(f"Tổng số Items: {len(self.item_index)}")
         

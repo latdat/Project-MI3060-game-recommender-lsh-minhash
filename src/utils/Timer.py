@@ -12,17 +12,17 @@ class Timer:
     def start(self):
         """Bắt đầu đếm thời gian"""
         self.start_time = time.time()
-        print(f"[{self.label}] Đã bắt đầu (Started)...")
+        print(f"[{self.label}] Đã bắt đầu...")
     
     def stop(self):
         """Dừng đếm và tính elapsed time"""
         if self.start_time is None:
-            print(f"[{self.label}] Cảnh báo (Warning): Timer chưa được bắt đầu!")
+            print(f"[{self.label}] Cảnh báo: Timer chưa được bắt đầu!")
             return 0
         
         end_time = time.time()
         self.elapsed_ms = (end_time - self.start_time) * 1000  # Convert to milliseconds
-        print(f"[{self.label}] Đã hoàn thành (Finished) trong {self.elapsed_ms:.2f} ms")
+        print(f"[{self.label}] Đã hoàn thành trong {self.elapsed_ms:.2f} ms")
         return self.elapsed_ms
     
     def get_elapsed_ms(self):

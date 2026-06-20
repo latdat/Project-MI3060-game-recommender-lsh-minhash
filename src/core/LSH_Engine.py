@@ -1,8 +1,3 @@
-"""
-Time Complexity:
-- build_index(): O(n * b)
-- get_candidates(): O(1) average, O(n) worst case
-"""
 class LSH_Engine:
     """
     LSH (Locality Sensitive Hashing) Engine
